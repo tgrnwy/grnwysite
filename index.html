@@ -25,8 +25,8 @@
   nav ul a:hover { color: var(--cream); }
 
   /* HERO */
-  #hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 5rem; position: relative; overflow: hidden; }
-  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: clamp(2rem, 5vw, 4rem); line-height: 1; color: var(--warm-grey); opacity: 0.12; position: absolute; bottom: 5rem; right: 4rem; pointer-events: none; user-select: none; }
+  #hero { height: 55vh; min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 3.5rem; position: relative; overflow: hidden; }
+  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: 1.4rem; line-height: 1; color: var(--warm-grey); opacity: 0.18; position: absolute; bottom: 3.5rem; right: 4rem; pointer-events: none; user-select: none; }
   .hero-latin { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.78rem; letter-spacing: 0.25em; color: var(--warm-grey); margin-bottom: 1.5rem; text-transform: uppercase; }
   .hero-name { font-family: 'IM Fell English', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.4rem; }
   .hero-name span { color: var(--accent); font-style: italic; }
@@ -80,16 +80,11 @@
   .work-piece:last-child { margin-bottom: 0; }
   .work-piece.reverse { direction: rtl; }
   .work-piece.reverse > * { direction: ltr; }
-  .work-image-wrap { display: flex; flex-direction: column; gap: 0.8rem; }
+  .work-image-wrap { display: flex; flex-direction: column; }
   .work-image { position: relative; overflow: hidden; background: var(--dark); cursor: zoom-in; }
   .work-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); pointer-events: none; user-select: none; -webkit-user-drag: none; }
   .work-image:hover img { transform: scale(1.03); }
   .work-image-icarus img { filter: brightness(1.15) contrast(1.1) saturate(1.1); }
-  .work-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-  .detail-thumb { overflow: hidden; background: var(--dark); cursor: zoom-in; aspect-ratio: 1; }
-  .detail-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-  .detail-thumb:hover img { transform: scale(1.08); }
-  .detail-label { font-family: 'Courier Prime', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); text-align: center; padding-top: 0.3rem; }
   .work-text { padding: 0.5rem 0; }
   .work-number { font-family: 'Courier Prime', monospace; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; }
   .work-title { font-family: 'IM Fell English', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.92; color: var(--cream); font-style: italic; margin-bottom: 1.5rem; }
@@ -163,12 +158,13 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-rule"></div>
-  <div class="hero-rule-label">Print — Installation — Sound</div>
+  <div class="hero-rule-label">Print — Installation — Moving Image</div>
   <div class="hero-swrd">S.W.R.D</div>
   <p class="hero-name">T.E. <span>Greenway</span></p>
   <div class="hero-sub">
     <span>Based — UK</span>
-    <span>Print, Sound &amp; Installation</span>
+    <span>Print &amp; Installation</span>
+    <span>Open to commissions</span>
   </div>
 </section>
 
@@ -254,23 +250,6 @@
       <div class="work-image" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
         <img src="lazarus_archive_scan.jpg" alt="Lazarus — T.E. Greenway">
       </div>
-      <div class="work-details">
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 15% 20%;">
-          </div>
-        </div>
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 50% 45%;">
-          </div>
-        </div>
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 70% 80%;">
-          </div>
-        </div>
-      </div>
     </div>
     <div class="work-text">
       <p class="work-number">Work 01 — 2025</p>
@@ -290,23 +269,6 @@
     <div class="work-image-wrap">
       <div class="work-image work-image-icarus" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
         <img src="Icarus_archive_scan.jpg" alt="Icarus — T.E. Greenway">
-      </div>
-      <div class="work-details">
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 30% 30%; filter: brightness(1.15) contrast(1.1);">
-          </div>
-        </div>
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 55% 55%; filter: brightness(1.15) contrast(1.1);">
-          </div>
-        </div>
-        <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 80% 25%; filter: brightness(1.15) contrast(1.1);">
-          </div>
-        </div>
       </div>
     </div>
     <div class="work-text">
@@ -333,6 +295,7 @@
     <div class="contact-links">
       <a href="mailto:tegreenway@proton.me" class="contact-link"><span class="link-label">Email</span><span>tegreenway@proton.me</span></a>
       <a href="https://instagram.com/thebelligerenceofexisting" class="contact-link" target="_blank"><span class="link-label">Instagram</span><span>@thebelligerenceofexisting</span></a>
+      <a href="#" class="contact-link"><span class="link-label">Commissions</span><span>Currently available</span></a>
       <a href="#" class="contact-link"><span class="link-label">Editions</span><span>Available on request</span></a>
     </div>
   </div>
