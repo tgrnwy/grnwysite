@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[T.E. Greenway]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --black: #0a0a08; --off-black: #111110; --dark: #1a1a17;
+    --warm-grey: #3a3832; --mid: #7a7668; --light: #c8c4b8;
+    --cream: #e8e4d8; --accent: #c8a96e; --white: #f2ede4;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--light); font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.6; cursor: crosshair; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  nav .logo { font-family: 'IM Fell English', serif; font-size: 0.95rem; letter-spacing: 0.15em; color: var(--cream); text-decoration: none; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a { font-family: 'Courier Prime', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.3s; }
+  nav ul a:hover { color: var(--cream); }
+  #hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 5rem; position: relative; overflow: hidden; }
+  .hero-latin { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.8rem; letter-spacing: 0.25em; color: var(--warm-grey); margin-bottom: 1.8rem; text-transform: uppercase; }
+  .hero-title { font-family: 'IM Fell English', serif; font-size: clamp(4rem, 10vw, 10rem); line-height: 0.88; color: var(--white); letter-spacing: -0.02em; }
+  .hero-title span { display: block; color: var(--accent); font-style: italic; }
+  .hero-sub { margin-top: 3rem; font-family: 'Courier Prime', monospace; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-grey); display: flex; gap: 3rem; }
+  .hero-rule { position: absolute; right: 4rem; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, var(--warm-grey) 30%, var(--warm-grey) 70%, transparent); opacity: 0.2; }
+  .hero-rule-label { position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--warm-grey); text-transform: uppercase; white-space: nowrap; }
+  section { padding: 8rem 4rem; }
+  .section-label { font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 5rem; display: flex; align-items: center; gap: 1.5rem; }
+  .section-label::after { content: ''; width: 3rem; height: 1px; background: var(--warm-grey); opacity: 0.4; }
+  #about { background: var(--off-black); display: grid; grid-template-columns: 5fr 4fr; gap: 8rem; align-items: start; }
+  .about-statement { font-family: 'IM Fell English', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.3; color: var(--cream); font-style: italic; margin-bottom: 2.5rem; }
+  .about-body { font-size: 1rem; line-height: 1.9; color: var(--mid); max-width: 48ch; }
+  .about-body p + p { margin-top: 1.5rem; }
+  .about-right { padding-top: 7rem; }
+  .disciplines { display: flex; flex-direction: column; }
+  .discipline-item { font-family: 'Courier Prime', monospace; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
+  .discipline-item:hover { color: var(--light); }
+  #work { background: var(--black); }
+  .work-piece { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 10rem; }
+  .work-piece:last-child { margin-bottom: 0; }
+  .work-piece.reverse { direction: rtl; }
+  .work-piece.reverse > * { direction: ltr; }
+  .work-image { position: relative; overflow: hidden; background: var(--dark); }
+  .work-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .work-image:hover img { transform: scale(1.03); }
+  .work-number { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.4em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; }
+  .work-title { font-family: 'IM Fell English', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.92; color: var(--cream); font-style: italic; margin-bottom: 2rem; }
+  .work-desc { font-size: 1rem; line-height: 1.9; color: var(--mid); max-width: 42ch; margin-bottom: 1.5rem; }
+  .work-meta { font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); line-height: 2; }
+  .quote-divider { background: var(--dark); padding: 7rem 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .quote-divider blockquote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.4rem, 2.8vw, 2.2rem); color: var(--cream); max-width: 55ch; margin: 0 auto; line-height: 1.45; }
+  .quote-divider cite { display: block; margin-top: 1.8rem; font-family: 'Courier Prime', monospace; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-grey); font-style: normal; }
+  #contact { background: var(--off-black); min-height: 55vh; display: flex; flex-direction: column; justify-content: center; }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+  .contact-heading { font-family: 'IM Fell English', serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.88; color: var(--cream); }
+  .contact-heading em { color: var(--accent); font-style: italic; }
+  .contact-links { display: flex; flex-direction: column; }
+  .contact-link { display: flex; align-items: baseline; gap: 2rem; text-decoration: none; color: var(--mid); font-family: 'Courier Prime', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
+  .contact-link:hover { color: var(--cream); }
+  .contact-link .link-label { color: var(--accent); min-width: 5rem; }
+  footer { padding: 2rem 4rem; background: var(--black); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.04); }
+  footer p { font-family: 'Courier Prime', monospace; font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-grey); }
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem 1.8rem; }
+    nav ul { gap: 1.4rem; }
+    section { padding: 5rem 1.8rem; }
+    #about { grid-template-columns: 1fr; gap: 3rem; }
+    .about-right { padding-top: 0; }
+    .work-piece, .work-piece.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-rule, .hero-rule-label { display: none; }
+    #hero { padding: 0 1.8rem 4rem; }
+    .hero-sub { flex-direction: column; gap: 0.8rem; }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 2rem 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="logo">[T.E. Greenway]</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-rule-label">Print — Installation — Moving Image</div>
+  <p class="hero-latin">Si monumentum requiris, circumspice</p>
+  <h1 class="hero-title">[T.E<br><span>GREENWAY]</span></h1>
+  <div class="hero-sub">
+    <span>Based — UK</span>
+    <span>Print &amp; Installation</span>
+    <span>Open to commissions</span>
+  </div>
+</section>
+
+<section id="about">
+  <div>
+    <div class="section-label">00 — About</div>
+    <p class="about-statement">"Work that treats existence itself as a form of monumental resistance."</p>
+    <div class="about-body">
+      <p>T.E. Greenway is a UK-based artist working across printmaking and installation. Their practice interrogates the weight of presence — the way things persist, accumulate, and endure within landscapes both physical and psychological.</p>
+      <p>A recurring visual language of monolithic forms, torn surfaces, and luminous orbs runs through the work — from the intimate scale of the sketchbook to the immersive scale of the installation environment.</p>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="disciplines">
+      <div class="discipline-item">Intaglio &amp; Relief Printing</div>
+      <div class="discipline-item">Giclée &amp; Limited Editions</div>
+      <div class="discipline-item">Installation</div>
+      <div class="discipline-item">Moving Image</div>
+      <div class="discipline-item">Mixed Media</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-label">01 — Selected Works</div>
+
+  <div class="work-piece">
+    <div class="work-image">
+      <img src="lazarus.svg" alt="Lazarus">
+    </div>
+    <div class="work-text">
+      <p class="work-number">Work 01 — 2025</p>
+      <h2 class="work-title">Lazarus</h2>
+      <p class="work-desc">A large-scale monoprint on paper, presented as a hanging scroll suspended from stained wooden battens. Printed landscape forms — monolithic verticals, a torn horizon, a gilded orb — layered across crumpled paper that carries the memory of its own handling.</p>
+      <p class="work-desc">The title invokes resurrection and return — the persistence of form against dissolution.</p>
+      <div class="work-meta">
+        Monoprint on paper — hanging scroll<br>
+        Stained wood, jute cord<br>
+        Dimensions variable
+      </div>
+    </div>
+  </div>
+
+  <div class="work-piece reverse">
+    <div class="work-image">
+      <img src="icarus.svg" alt="Icarus">
+    </div>
+    <div class="work-text">
+      <p class="work-number">Work 02 — 2025</p>
+      <h2 class="work-title">Icarus</h2>
+      <p class="work-desc">A figure printed against a deep violet ground, caught between the horizontal pull of the landscape and the vertical reach of the monolith. The orb — luminous, indifferent — occupies the centre of the composition.</p>
+      <p class="work-desc">Where Lazarus speaks of return, Icarus speaks of the cost of ascent — the body that persists after the fall.</p>
+      <div class="work-meta">
+        Screenprint on paper — hanging scroll<br>
+        Stained wood, jute cord<br>
+        Dimensions variable
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quote-divider">
+  <blockquote>If you seek a monument, look around you.</blockquote>
+  <cite>Si monumentum requiris, circumspice — Epitaph of Sir Christopher Wren</cite>
+</div>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">02 — Contact</div>
+      <h2 class="contact-heading">Get<br>in<br><em>touch.</em></h2>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:contactgrnwy@gmail.com" class="contact-link"><span class="link-label">Email</span><span>contactgrnwy@gmail.com</span></a>
+      <a href="https://instagram.com/thebelligerenceofexisting" class="contact-link" target="_blank"><span class="link-label">Instagram</span><span>@thebelligerenceofexisting</span></a>
+      <a href="#" class="contact-link"><span class="link-label">Commissions</span><span>Currently available</span></a>
+      <a href="#" class="contact-link"><span class="link-label">Editions</span><span>Available on request</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>[T.E. Greenway] — 2026</p>
+  <p>All works © T.E. Greenway. All rights reserved.</p>
+  <p>grnwy.com</p>
+</footer>
+
+</body>
+</html>

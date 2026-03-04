@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#111110"/>
+  <!-- Ground/horizon -->
+  <rect x="0" y="680" width="800" height="4" fill="#3a3832" opacity="0.5"/>
+  <!-- Monolith -->
+  <rect x="370" y="200" width="60" height="480" fill="#2a2a26" opacity="0.8"/>
+  <!-- Sun/orb -->
+  <circle cx="220" cy="380" r="130" fill="none" stroke="#c8a96e" stroke-width="1" opacity="0.25"/>
+  <circle cx="220" cy="380" r="90" fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.15"/>
+  <!-- Torn edge lines -->
+  <path d="M0 680 Q100 670 200 682 Q300 690 400 678 Q500 668 600 680 Q700 688 800 675" fill="none" stroke="#3a3832" stroke-width="1.5" opacity="0.4"/>
+  <!-- Label -->
+  <text x="400" y="920" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#7a7668" text-anchor="middle" letter-spacing="3">Lazarus</text>
+  <text x="400" y="950" font-family="Courier New, monospace" font-size="10" fill="#3a3832" text-anchor="middle" letter-spacing="4">ARCHIVAL IMAGE PENDING</text>
+</svg>
