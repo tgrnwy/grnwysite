@@ -10,7 +10,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --black: #0a0a08; --off-black: #111110; --dark: #1a1a17;
-    --warm-grey: #3a3832; --mid: #7a7668; --light: #c8c4b8;
+    --warm-grey: #3a3832; --mid: #9a9488; --light: #c8c4b8;
     --cream: #e8e4d8; --accent: #c8a96e; --white: #f2ede4;
   }
   html { scroll-behavior: smooth; }
@@ -26,68 +26,75 @@
 
   /* HERO */
   #hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 5rem; position: relative; overflow: hidden; }
-  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: clamp(5rem, 18vw, 18rem); line-height: 1; color: var(--warm-grey); opacity: 0.12; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); white-space: nowrap; pointer-events: none; user-select: none; }
+  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: clamp(3rem, 10vw, 8rem); line-height: 1; color: var(--warm-grey); opacity: 0.13; position: absolute; bottom: 38%; left: 50%; transform: translateX(-50%); white-space: nowrap; pointer-events: none; user-select: none; }
   .hero-latin { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.78rem; letter-spacing: 0.25em; color: var(--warm-grey); margin-bottom: 1.5rem; text-transform: uppercase; }
   .hero-name { font-family: 'IM Fell English', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.4rem; }
   .hero-name span { color: var(--accent); font-style: italic; }
-  .hero-sub { margin-top: 2.5rem; font-family: 'Courier Prime', monospace; font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-grey); display: flex; gap: 3rem; flex-wrap: wrap; }
+  .hero-sub { margin-top: 2rem; font-family: 'Courier Prime', monospace; font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-grey); display: flex; gap: 3rem; flex-wrap: wrap; }
   .hero-rule { position: absolute; right: 4rem; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, var(--warm-grey) 30%, var(--warm-grey) 70%, transparent); opacity: 0.2; }
   .hero-rule-label { position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: 'Courier Prime', monospace; font-size: 0.58rem; letter-spacing: 0.3em; color: var(--warm-grey); text-transform: uppercase; white-space: nowrap; }
 
   /* SECTIONS */
-  section { padding: 8rem 4rem; }
-  .section-label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 5rem; display: flex; align-items: center; gap: 1.5rem; }
+  section { padding: 5rem 4rem; }
+  .section-label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 3rem; display: flex; align-items: center; gap: 1.5rem; }
   .section-label::after { content: ''; width: 3rem; height: 1px; background: var(--warm-grey); opacity: 0.4; }
 
   /* ABOUT */
-  #about { background: var(--off-black); display: grid; grid-template-columns: 5fr 4fr; gap: 8rem; align-items: start; }
-  .about-statement { font-family: 'IM Fell English', serif; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.35; color: var(--cream); font-style: italic; margin-bottom: 2.5rem; }
+  #about { background: var(--off-black); display: grid; grid-template-columns: 5fr 4fr; gap: 6rem; align-items: start; }
+  .about-statement { font-family: 'IM Fell English', serif; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.35; color: var(--cream); font-style: italic; margin-bottom: 2rem; }
   .about-body { font-size: 1rem; line-height: 1.9; color: var(--mid); max-width: 48ch; }
-  .about-body p + p { margin-top: 1.5rem; }
-  .about-right { padding-top: 7rem; }
+  .about-body p + p { margin-top: 1.2rem; }
+  .about-right { padding-top: 4rem; }
 
   /* EXHIBITIONS */
-  .exhibitions { margin-bottom: 3.5rem; }
-  .exhibitions-heading { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 1.2rem; }
-  /* =====================================================
-     EDIT YOUR EXHIBITIONS HERE
-     Format: Title — Gallery, City — Year
-     Add or remove .exhibition-item divs as needed
-  ====================================================== */
-  .exhibition-item { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; color: var(--mid); padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.5; transition: color 0.3s; }
+  .exhibitions-heading { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 1rem; }
+  .exhibition-item { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; color: var(--mid); padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.5; transition: color 0.3s; }
   .exhibition-item:hover { color: var(--light); }
 
-  /* DISCIPLINES */
-  .disciplines { display: flex; flex-direction: column; margin-top: 2rem; }
-  .discipline-item { font-family: 'Courier Prime', monospace; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
-  .discipline-item:hover { color: var(--light); }
+  /* DISPATCHES / MAILING */
+  #dispatches { background: var(--black); border-top: 1px solid rgba(255,255,255,0.04); }
+  .dispatches-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .dispatches-text h2 { font-family: 'IM Fell English', serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; color: var(--cream); font-style: italic; margin-bottom: 1rem; }
+  .dispatches-text p { font-size: 1rem; line-height: 1.8; color: var(--mid); max-width: 40ch; }
+
+  /* MailerLite overrides */
+  #mlb2-37983619.ml-form-embedContainer { display: block !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper { background: transparent !important; border: none !important; display: block !important; width: 100% !important; max-width: 100% !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedBody { padding: 0 !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent { margin-bottom: 1.5rem !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent h4 { display: none !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent p { display: none !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background: transparent !important; border: none !important; border-bottom: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--cream) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.75rem !important; letter-spacing: 0.2em !important; padding: 1rem 0 !important; width: 100% !important; outline: none !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder { color: var(--warm-grey) !important; text-transform: uppercase; letter-spacing: 0.2em; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus { border-bottom-color: var(--accent) !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin-top: 1.2rem !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background: transparent !important; border: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--mid) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.65rem !important; letter-spacing: 0.3em !important; text-transform: uppercase !important; padding: 0.9rem 2rem !important; width: auto !important; transition: all 0.3s !important; cursor: pointer; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: var(--warm-grey) !important; color: var(--cream) !important; border-color: var(--warm-grey) !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0 !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody h4 { font-family: 'IM Fell English', serif !important; font-size: 1.8rem !important; color: var(--accent) !important; font-style: italic !important; font-weight: 400 !important; }
+  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody p { font-family: 'Cormorant Garamond', serif !important; color: var(--mid) !important; font-size: 1rem !important; }
 
   /* WORKS */
-  #work { background: var(--black); }
-  .work-piece { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 10rem; }
+  #work { background: var(--off-black); }
+  .work-piece { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
   .work-piece:last-child { margin-bottom: 0; }
   .work-piece.reverse { direction: rtl; }
   .work-piece.reverse > * { direction: ltr; }
-
-  /* Main image */
-  .work-image-wrap { display: flex; flex-direction: column; gap: 1rem; }
+  .work-image-wrap { display: flex; flex-direction: column; gap: 0.8rem; }
   .work-image { position: relative; overflow: hidden; background: var(--dark); cursor: zoom-in; }
   .work-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); pointer-events: none; user-select: none; -webkit-user-drag: none; }
   .work-image:hover img { transform: scale(1.03); }
   .work-image-icarus img { filter: brightness(1.15) contrast(1.1) saturate(1.1); }
-
-  /* Detail thumbnails */
-  .work-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .work-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
   .detail-thumb { overflow: hidden; background: var(--dark); cursor: zoom-in; aspect-ratio: 1; }
-  .detail-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; pointer-events: none; user-select: none; -webkit-user-drag: none; filter: brightness(1.05); }
+  .detail-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; pointer-events: none; user-select: none; -webkit-user-drag: none; }
   .detail-thumb:hover img { transform: scale(1.08); }
   .detail-label { font-family: 'Courier Prime', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); text-align: center; padding-top: 0.3rem; }
-
-  .work-text { padding: 1rem 0; }
-  .work-number { font-family: 'Courier Prime', monospace; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; }
-  .work-title { font-family: 'IM Fell English', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.92; color: var(--cream); font-style: italic; margin-bottom: 2rem; }
-  .work-desc { font-size: 1rem; line-height: 1.9; color: var(--mid); max-width: 42ch; margin-bottom: 1.5rem; }
-  .work-meta { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); line-height: 2.2; }
+  .work-text { padding: 0.5rem 0; }
+  .work-number { font-family: 'Courier Prime', monospace; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; }
+  .work-title { font-family: 'IM Fell English', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.92; color: var(--cream); font-style: italic; margin-bottom: 1.5rem; }
+  .work-desc { font-size: 1rem; line-height: 1.9; color: var(--mid); max-width: 42ch; margin-bottom: 1.2rem; }
+  .work-meta { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-grey); padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.06); line-height: 2.2; }
 
   /* LIGHTBOX */
   .lightbox { display: none; position: fixed; inset: 0; background: rgba(8,8,6,0.97); z-index: 500; align-items: center; justify-content: center; cursor: zoom-out; }
@@ -98,47 +105,42 @@
   .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.25em; color: var(--warm-grey); text-transform: uppercase; white-space: nowrap; }
 
   /* CONTACT */
-  #contact { background: var(--off-black); min-height: 55vh; display: flex; flex-direction: column; justify-content: center; }
+  #contact { background: var(--black); min-height: 50vh; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(255,255,255,0.04); }
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
   .contact-heading { font-family: 'IM Fell English', serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.88; color: var(--cream); }
   .contact-heading em { color: var(--accent); font-style: italic; }
   .contact-links { display: flex; flex-direction: column; }
-  .contact-link { display: flex; align-items: baseline; gap: 2rem; text-decoration: none; color: var(--mid); font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
+  .contact-link { display: flex; align-items: baseline; gap: 2rem; text-decoration: none; color: var(--mid); font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
   .contact-link:hover { color: var(--cream); }
   .contact-link .link-label { color: var(--accent); min-width: 5rem; }
 
   /* FOOTER */
-  footer { padding: 2rem 4rem; background: var(--black); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.04); }
+  footer { padding: 1.8rem 4rem; background: var(--off-black); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.04); }
   footer p { font-family: 'Courier Prime', monospace; font-size: 0.56rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-grey); }
-  .footer-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: 1.2rem; color: var(--warm-grey); opacity: 0.5; letter-spacing: 0.05em; }
+  .footer-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: 1.2rem; color: var(--warm-grey); opacity: 0.5; }
 
   /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 1.4rem 1.8rem; }
     nav ul { gap: 1.2rem; }
-    section { padding: 5rem 1.8rem; }
-    #about { grid-template-columns: 1fr; gap: 3rem; }
+    section { padding: 4rem 1.8rem; }
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-right { padding-top: 0; }
-    .work-piece, .work-piece.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
-    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .dispatches-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .work-piece, .work-piece.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-rule, .hero-rule-label { display: none; }
     #hero { padding: 0 1.8rem 4rem; }
     .hero-sub { flex-direction: column; gap: 0.6rem; }
-    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 2rem 1.8rem; }
-    .hero-swrd { font-size: clamp(4rem, 28vw, 8rem); }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.8rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- Right-click protection -->
 <script>
-  document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG') e.preventDefault();
-  });
-  document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') e.preventDefault();
-  });
+  document.addEventListener('contextmenu', function(e) { if (e.target.tagName === 'IMG') e.preventDefault(); });
+  document.addEventListener('dragstart', function(e) { if (e.target.tagName === 'IMG') e.preventDefault(); });
 </script>
 
 <!-- LIGHTBOX -->
@@ -152,6 +154,7 @@
   <a href="#hero" class="logo">T.E. Greenway</a>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#dispatches">Dispatches</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -182,34 +185,69 @@
     </div>
   </div>
   <div class="about-right">
-
     <div class="exhibitions">
       <p class="exhibitions-heading">Exhibitions</p>
       <!-- =====================================================
            EDIT YOUR EXHIBITIONS HERE
            Format: Title — Gallery, City — Year
-           Add or remove lines as needed
       ====================================================== -->
       <div class="exhibition-item">[Exhibition Title] — [Gallery], [City] — 2026</div>
       <div class="exhibition-item">[Exhibition Title] — [Gallery], [City] — 2025</div>
       <div class="exhibition-item">[Exhibition Title] — [Gallery], [City] — 2025</div>
       <div class="exhibition-item">[Exhibition Title] — [Gallery], [City] — 2024</div>
     </div>
+  </div>
+</section>
 
-    <div class="disciplines">
-      <div class="discipline-item">Intaglio &amp; Relief Printing</div>
-      <div class="discipline-item">Giclée &amp; Limited Editions</div>
-      <div class="discipline-item">Installation</div>
-      <div class="discipline-item">Moving Image</div>
-      <div class="discipline-item">Mixed Media</div>
+<!-- DISPATCHES / MAILING LIST -->
+<section id="dispatches">
+  <div class="dispatches-inner">
+    <div class="dispatches-text">
+      <div class="section-label">01 — Dispatches</div>
+      <h2>Stay in the loop.</h2>
+      <p>Exhibition news, new work and process updates — direct to your inbox.</p>
     </div>
-
+    <div>
+      <div id="mlb2-37983619" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37983619">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent"></div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email address" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Subscribe</button>
+                  <button disabled="disabled" style="display:none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display:none">
+              <div class="ml-form-successContent">
+                <h4>Thank you.</h4>
+                <p>You have been added to the list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- WORKS -->
 <section id="work">
-  <div class="section-label">01 — Selected Works</div>
+  <div class="section-label">02 — Selected Works</div>
 
   <!-- LAZARUS -->
   <div class="work-piece">
@@ -219,20 +257,20 @@
       </div>
       <div class="work-details">
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: orb', '15% 15% / 40% 40%')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus detail — orb" style="object-position: 15% 15%; transform: scale(2.5); transform-origin: 15% 15%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: orb')">
+            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:15% 15%;transform:scale(2.5);transform-origin:15% 15%;">
           </div>
           <p class="detail-label">The Orb</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: monolith', '50% 40% / 30% 60%')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus detail — monolith" style="object-position: 50% 40%; transform: scale(2.5); transform-origin: 50% 40%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: monolith')">
+            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:50% 40%;transform:scale(2.5);transform-origin:50% 40%;">
           </div>
           <p class="detail-label">Monolith</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: horizon', '50% 80% / 80% 30%')">
-            <img src="lazarus_archive_scan.jpg" alt="Lazarus detail — horizon" style="object-position: 50% 85%; transform: scale(2.5); transform-origin: 50% 85%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: horizon')">
+            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:50% 85%;transform:scale(2.5);transform-origin:50% 85%;">
           </div>
           <p class="detail-label">Horizon</p>
         </div>
@@ -260,19 +298,19 @@
       <div class="work-details">
         <div>
           <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: figure')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus detail — figure" style="object-position: 52% 45%; transform: scale(2.8); transform-origin: 52% 45%; filter: brightness(1.2) contrast(1.1);">
+            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:52% 45%;transform:scale(2.8);transform-origin:52% 45%;filter:brightness(1.2) contrast(1.1);">
           </div>
           <p class="detail-label">Figure</p>
         </div>
         <div>
           <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: orb')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus detail — orb" style="object-position: 40% 55%; transform: scale(2.2); transform-origin: 40% 55%; filter: brightness(1.2) contrast(1.1);">
+            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:40% 55%;transform:scale(2.2);transform-origin:40% 55%;filter:brightness(1.2) contrast(1.1);">
           </div>
           <p class="detail-label">Orb</p>
         </div>
         <div>
           <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: surface')">
-            <img src="Icarus_archive_scan.jpg" alt="Icarus detail — surface texture" style="object-position: 80% 30%; transform: scale(3); transform-origin: 80% 30%; filter: brightness(1.2) contrast(1.1);">
+            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:80% 30%;transform:scale(3);transform-origin:80% 30%;filter:brightness(1.2) contrast(1.1);">
           </div>
           <p class="detail-label">Surface</p>
         </div>
@@ -290,14 +328,13 @@
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div>
-      <div class="section-label">02 — Contact</div>
+      <div class="section-label">03 — Contact</div>
       <h2 class="contact-heading">Get<br>in<br><em>touch.</em></h2>
     </div>
     <div class="contact-links">
@@ -309,81 +346,6 @@
   </div>
 </section>
 
-
-  <!-- MAILING LIST -->
-  <section id="mailing" style="background: var(--black); border-top: 1px solid rgba(255,255,255,0.04);">
-    <div style="max-width: 600px;">
-      <div class="section-label">03 — Dispatches</div>
-
-      <!-- MailerLite overrides -->
-      <style>
-        #mlb2-37983619.ml-form-embedContainer { display: block !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper { background: transparent !important; border: none !important; display: block !important; width: 100% !important; max-width: 100% !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedBody { padding: 0 !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent { margin-bottom: 2rem !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent h4 { font-family: 'IM Fell English', serif !important; font-size: clamp(2rem, 4vw, 3rem) !important; color: var(--cream) !important; font-weight: 400 !important; font-style: italic !important; letter-spacing: 0.02em !important; margin-bottom: 0.8rem !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent p { font-family: 'Cormorant Garamond', serif !important; font-size: 1rem !important; color: var(--mid) !important; line-height: 1.7 !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background: transparent !important; border: none !important; border-bottom: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--cream) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.75rem !important; letter-spacing: 0.2em !important; padding: 1rem 0 !important; width: 100% !important; outline: none !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder { color: var(--warm-grey) !important; text-transform: uppercase; letter-spacing: 0.2em; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus { border-bottom-color: var(--accent) !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin-top: 1.5rem !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background: transparent !important; border: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--mid) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.65rem !important; letter-spacing: 0.3em !important; text-transform: uppercase !important; padding: 1rem 2rem !important; width: auto !important; transition: all 0.3s !important; cursor: pointer; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: var(--warm-grey) !important; color: var(--cream) !important; border-color: var(--warm-grey) !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0 !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody h4 { font-family: 'IM Fell English', serif !important; font-size: 1.8rem !important; color: var(--accent) !important; font-style: italic !important; font-weight: 400 !important; }
-        #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody p { font-family: 'Cormorant Garamond', serif !important; color: var(--mid) !important; font-size: 1rem !important; }
-      </style>
-
-      <div id="mlb2-37983619" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37983619">
-      <div class="ml-form-align-center ">
-        <div class="ml-form-embedWrapper embedForm">
-          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-            <div class="ml-form-embedContent">
-              <h4>Dispatches</h4>
-              <p>Exhibition news, new work and process updates.</p>
-            </div>
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/subscribe" data-code="" method="post" target="_blank">
-              <div class="ml-form-formContent">
-                <div class="ml-form-fieldRow ml-last-item">
-                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email address" autocomplete="email">
-                  </div>
-                </div>
-              </div>
-              <input type="hidden" name="ml-submit" value="1">
-              <div class="ml-form-embedSubmit">
-                <button type="submit" class="primary">Subscribe</button>
-                <button disabled="disabled" style="display: none;" type="button" class="loading">
-                  <div class="ml-form-embedSubmitLoad"></div>
-                  <span class="sr-only">Loading...</span>
-                </button>
-              </div>
-              <input type="hidden" name="anticsrf" value="true">
-            </form>
-          </div>
-          <div class="ml-form-successBody row-success" style="display: none">
-            <div class="ml-form-successContent">
-              <h4>Thank you.</h4>
-              <p>You have been added to the list.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </div>
-  </section>
-
-  <script>
-    function ml_webform_success_37983619() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-37983619 .row-success').show();
-      $('.ml-subscribe-form-37983619 .row-form').hide();
-    }
-  </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-  <script>fetch("https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/takel")</script>
-
 <footer>
   <p>T.E. Greenway — 2026</p>
   <span class="footer-swrd">S.W.R.D</span>
@@ -391,28 +353,28 @@
 </footer>
 
 <script>
+  function ml_webform_success_37983619() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-37983619 .row-success').show();
+    $('.ml-subscribe-form-37983619 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+<script>fetch("https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/takel")</script>
+
+<script>
   function openLightbox(src, caption) {
-    const lb = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    const cap = document.getElementById('lightbox-caption');
-    img.src = src;
-    cap.textContent = caption;
-    lb.classList.add('active');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
   }
-
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 
 </body>
