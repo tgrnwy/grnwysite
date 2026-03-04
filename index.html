@@ -26,7 +26,7 @@
 
   /* HERO */
   #hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 5rem; position: relative; overflow: hidden; }
-  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: clamp(3rem, 10vw, 8rem); line-height: 1; color: var(--warm-grey); opacity: 0.13; position: absolute; bottom: 38%; left: 50%; transform: translateX(-50%); white-space: nowrap; pointer-events: none; user-select: none; }
+  .hero-swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: clamp(2rem, 5vw, 4rem); line-height: 1; color: var(--warm-grey); opacity: 0.12; position: absolute; bottom: 5rem; right: 4rem; pointer-events: none; user-select: none; }
   .hero-latin { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.78rem; letter-spacing: 0.25em; color: var(--warm-grey); margin-bottom: 1.5rem; text-transform: uppercase; }
   .hero-name { font-family: 'IM Fell English', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.4rem; }
   .hero-name span { color: var(--accent); font-style: italic; }
@@ -162,8 +162,9 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-swrd">S.W.R.D</div>
   <div class="hero-rule"></div>
+  <div class="hero-rule-label">Print — Installation — Moving Image</div>
+  <div class="hero-swrd">S.W.R.D</div>
   <p class="hero-name">T.E. <span>Greenway</span></p>
   <div class="hero-sub">
     <span>Based — UK</span>
@@ -256,22 +257,19 @@
       </div>
       <div class="work-details">
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: orb')">
-            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:15% 15%;transform:scale(2.5);transform-origin:15% 15%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
+            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 15% 20%;">
           </div>
-          <p class="detail-label">The Orb</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: monolith')">
-            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:50% 40%;transform:scale(2.5);transform-origin:50% 40%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
+            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 50% 45%;">
           </div>
-          <p class="detail-label">Monolith</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — detail: horizon')">
-            <img src="lazarus_archive_scan.jpg" alt="detail" style="object-position:50% 85%;transform:scale(2.5);transform-origin:50% 85%;">
+          <div class="detail-thumb" onclick="openLightbox('lazarus_archive_scan.jpg', 'Lazarus — 2025')">
+            <img src="lazarus_archive_scan.jpg" alt="Lazarus" style="object-position: 70% 80%;">
           </div>
-          <p class="detail-label">Horizon</p>
         </div>
       </div>
     </div>
@@ -296,22 +294,19 @@
       </div>
       <div class="work-details">
         <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: figure')">
-            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:52% 45%;transform:scale(2.8);transform-origin:52% 45%;filter:brightness(1.2) contrast(1.1);">
+          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
+            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 30% 30%; filter: brightness(1.15) contrast(1.1);">
           </div>
-          <p class="detail-label">Figure</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: orb')">
-            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:40% 55%;transform:scale(2.2);transform-origin:40% 55%;filter:brightness(1.2) contrast(1.1);">
+          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
+            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 55% 55%; filter: brightness(1.15) contrast(1.1);">
           </div>
-          <p class="detail-label">Orb</p>
         </div>
         <div>
-          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — detail: surface')">
-            <img src="Icarus_archive_scan.jpg" alt="detail" style="object-position:80% 30%;transform:scale(3);transform-origin:80% 30%;filter:brightness(1.2) contrast(1.1);">
+          <div class="detail-thumb" onclick="openLightbox('Icarus_archive_scan.jpg', 'Icarus — 2025')">
+            <img src="Icarus_archive_scan.jpg" alt="Icarus" style="object-position: 80% 25%; filter: brightness(1.15) contrast(1.1);">
           </div>
-          <p class="detail-label">Surface</p>
         </div>
       </div>
     </div>
@@ -337,7 +332,7 @@
       <h2 class="contact-heading">Get<br>in<br><em>touch.</em></h2>
     </div>
     <div class="contact-links">
-      <a href="mailto:contactgrnwy@gmail.com" class="contact-link"><span class="link-label">Email</span><span>contactgrnwy@gmail.com</span></a>
+      <a href="mailto:tegreenway@proton.me" class="contact-link"><span class="link-label">Email</span><span>tegreenway@proton.me</span></a>
       <a href="https://instagram.com/thebelligerenceofexisting" class="contact-link" target="_blank"><span class="link-label">Instagram</span><span>@thebelligerenceofexisting</span></a>
       <a href="#" class="contact-link"><span class="link-label">Commissions</span><span>Currently available</span></a>
       <a href="#" class="contact-link"><span class="link-label">Editions</span><span>Available on request</span></a>
@@ -371,10 +366,4 @@
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
-  }
-  document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
-</script>
-
-</body>
-</html>
+  
