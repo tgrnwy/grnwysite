@@ -59,22 +59,9 @@
   .dispatches-text h2 { font-family: 'IM Fell English', serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; color: var(--cream); font-style: italic; margin-bottom: 1rem; }
   .dispatches-text p { font-size: 1rem; line-height: 1.8; color: var(--mid); max-width: 40ch; }
 
-  /* MailerLite overrides */
-  #mlb2-37983619.ml-form-embedContainer { display: block !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper { background: transparent !important; border: none !important; display: block !important; width: 100% !important; max-width: 100% !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedBody { padding: 0 !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent { margin-bottom: 1.5rem !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent h4 { display: none !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedContent p { display: none !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background: transparent !important; border: none !important; border-bottom: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--cream) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.75rem !important; letter-spacing: 0.2em !important; padding: 1rem 0 !important; width: 100% !important; outline: none !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder { color: var(--warm-grey) !important; text-transform: uppercase; letter-spacing: 0.2em; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus { border-bottom-color: var(--accent) !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin-top: 1.2rem !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background: transparent !important; border: 1px solid var(--warm-grey) !important; border-radius: 0 !important; color: var(--mid) !important; font-family: 'Courier Prime', monospace !important; font-size: 0.65rem !important; letter-spacing: 0.3em !important; text-transform: uppercase !important; padding: 0.9rem 2rem !important; width: auto !important; transition: all 0.3s !important; cursor: pointer; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background: var(--warm-grey) !important; color: var(--cream) !important; border-color: var(--warm-grey) !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0 !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody h4 { font-family: 'IM Fell English', serif !important; font-size: 1.8rem !important; color: var(--accent) !important; font-style: italic !important; font-weight: 400 !important; }
-  #mlb2-37983619.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody p { font-family: 'Cormorant Garamond', serif !important; color: var(--mid) !important; font-size: 1rem !important; }
+  /* Substack link */
+  .substack-link { display: inline-block; font-family: 'Courier Prime', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid); background: transparent; border: 1px solid var(--warm-grey); padding: 0.9rem 2rem; text-decoration: none; transition: all 0.3s; margin-top: 1.5rem; }
+  .substack-link:hover { background: var(--warm-grey); color: var(--cream); }
 
   /* WORKS */
   #work { background: var(--off-black); }
@@ -154,6 +141,7 @@
     <li><a href="#dispatches">Dispatches</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="shop.html">Editions</a></li>
   </ul>
 </nav>
 
@@ -205,39 +193,7 @@
       <p>Exhibition news, new work and process updates - direct to your inbox.</p>
     </div>
     <div>
-      <div id="mlb2-37983619" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37983619">
-        <div class="ml-form-align-center">
-          <div class="ml-form-embedWrapper embedForm">
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <div class="ml-form-embedContent"></div>
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/subscribe" data-code="" method="post" target="_blank">
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email address" autocomplete="email">
-                    </div>
-                  </div>
-                </div>
-                <input type="hidden" name="ml-submit" value="1">
-                <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Subscribe</button>
-                  <button disabled="disabled" style="display:none;" type="button" class="loading">
-                    <div class="ml-form-embedSubmitLoad"></div>
-                    <span class="sr-only">Loading...</span>
-                  </button>
-                </div>
-                <input type="hidden" name="anticsrf" value="true">
-              </form>
-            </div>
-            <div class="ml-form-successBody row-success" style="display:none">
-              <div class="ml-form-successContent">
-                <h4>Thank you.</h4>
-                <p>You have been added to the list.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="https://tegreenway.substack.com" class="substack-link" target="_blank">Subscribe via Substack</a>
     </div>
   </div>
 </section>
@@ -295,6 +251,30 @@
       </div>
     </div>
   </div>
+
+  <!-- ISHTAR -->
+  <div class="work-piece">
+    <div class="work-image-wrap">
+      <div class="work-image" onclick="openLightbox('Ishtar__2026_.jpg', 'Ishtar - 2026')">
+        <img src="Ishtar__2026_.jpg" alt="Ishtar — T.E. Greenway">
+      </div>
+    </div>
+    <div class="work-text">
+      <p class="work-number">Work 03 - 2026</p>
+      <h2 class="work-title">Ishtar</h2>
+      <p class="work-desc">Monolithic forms torn from receipt paper and layered against a field of living lichen — gold and silver leaf catching the same light as the organic ground beneath. The ancient and the disposable, pressed together.</p>
+      <p class="work-desc">Ishtar — goddess of love, war, and the descent into the underworld — names a work about what endures when the everyday is lifted into the mythic.</p>
+      <div class="work-meta">
+        Receipt collage, gold leaf, silver leaf<br>
+        Digital scan<br>
+        2026<br>
+        <br>
+        Limited edition print available on request.<br>
+        <br>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
@@ -317,16 +297,6 @@
   <span class="footer-swrd">S.W.R.D</span>
   <p>All works © T.E. GREENWAY. All rights reserved.</p>
 </footer>
-
-<script>
-  function ml_webform_success_37983619() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form-37983619 .row-success').show();
-    $('.ml-subscribe-form-37983619 .row-form').hide();
-  }
-</script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-<script>fetch("https://assets.mailerlite.com/jsonp/2160773/forms/181016556468175962/takel")</script>
 
 <script>
   function openLightbox(src, caption) {
