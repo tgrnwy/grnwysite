@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editions — T.E. GREENWAY</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Courier+Prime&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<meta name="description" content="Limited editions by T.E. Greenway — coming soon.">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --black: #0a0a08; --off-black: #111110; --dark: #1a1a17;
+    --warm-grey: #3a3832; --mid: #9a9488; --light: #c8c4b8;
+    --cream: #e8e4d8; --accent: #c8a96e; --white: #f2ede4;
+  }
+  html, body { height: 100%; }
+  body { background: var(--black); color: var(--light); font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.6; cursor: crosshair; overflow: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: 0.4; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.8rem 4rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(10,10,8,0.95), transparent); }
+  nav .logo { font-family: 'IM Fell English', serif; font-size: 0.82rem; letter-spacing: 0.18em; color: var(--cream); text-decoration: none; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a { font-family: 'Courier Prime', monospace; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.3s; }
+  nav ul a:hover, nav ul a.active { color: var(--cream); }
+
+  /* MAIN */
+  main { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 4rem; position: relative; }
+
+  .swrd { font-family: 'UnifrakturMaguntia', cursive; font-size: 1.4rem; color: var(--warm-grey); opacity: 0.12; position: absolute; bottom: 3rem; right: 4rem; pointer-events: none; user-select: none; }
+
+  .rule { position: absolute; right: 4rem; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, var(--warm-grey) 30%, var(--warm-grey) 70%, transparent); opacity: 0.2; }
+
+  .label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1.5rem; }
+  .label::after { content: ''; width: 3rem; height: 1px; background: var(--warm-grey); opacity: 0.4; }
+
+  .heading { font-family: 'IM Fell English', serif; font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.88; color: var(--cream); margin-bottom: 2.5rem; }
+  .heading em { color: var(--accent); font-style: italic; }
+
+  .body { font-family: 'Courier Prime', monospace; font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-grey); line-height: 2.4; margin-bottom: 3rem; max-width: 40ch; }
+
+  .back { font-family: 'Courier Prime', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid); background: transparent; border: 1px solid var(--warm-grey); padding: 0.9rem 2rem; text-decoration: none; transition: all 0.3s; display: inline-block; }
+  .back:hover { background: var(--warm-grey); color: var(--cream); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1.4rem 1.8rem; }
+    nav ul { gap: 1.2rem; }
+    main { padding: 0 1.8rem; }
+    .rule { display: none; }
+    .swrd { right: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">T.E. Greenway</a>
+  <ul>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="editions.html" class="active">Editions</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="rule"></div>
+  <div class="swrd">S.W.R.D</div>
+  <p class="label">Editions</p>
+  <h1 class="heading">Coming<br><em>soon.</em></h1>
+  <p class="body">
+    Limited prints &amp; editions<br>
+    by T.E. Greenway<br>
+    — available shortly<br>
+    — enquiries via email
+  </p>
+  <a href="index.html" class="back">← Return</a>
+</main>
+
+</body>
+</html>
