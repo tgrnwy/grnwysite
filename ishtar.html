@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishtar · T.E. Greenway</title>
+<meta name="description" content="Ishtar, 2026. Receipt collage with gold and silver leaf by T.E. Greenway.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Franklin:wght@900&family=Hanken+Grotesk:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="orb" aria-hidden="true"></span>T.E. Greenway</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="works.html" aria-current="page">Works</a></li>
+        <li><a href="dispatches.html">Dispatches</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://tegreenway.sumupstore.com" target="_blank" rel="noopener">Editions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================
+     ARTWORK PAGE. To add a new work, duplicate this file,
+     rename it, and edit the image (appears twice), title,
+     year, description and metadata below. Then add a tile
+     to works.html (and index.html if featuring it).
+====================================================== -->
+
+<div class="work-page">
+  <div class="inner">
+    <figure style="margin:0">
+      <div class="work-image" id="work-image" role="button" tabindex="0" aria-label="View Ishtar full size">
+        <img src="Ishtar_2026.jpg" alt="Ishtar, receipt collage with gold and silver leaf pressed into the surface">
+      </div>
+    </figure>
+    <div>
+      <h1 class="work-title">Ishtar</h1>
+      <p class="work-year">2026</p>
+      <p class="work-desc">Receipt paper torn into monolithic forms, collaged against an opulent skyline. Gold and silver leaf pressed into the surface: the disposable made permanent.</p>
+      <div class="work-meta">
+        Receipt collage, gold leaf, silver leaf<br>
+        Digital scan
+      </div>
+      <div class="work-nav">
+        <a href="works.html">All works</a>
+        <a href="icarus.html">Next work</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>T.E. Greenway 2026</p>
+    <p class="footer-mark"><span class="orb" aria-hidden="true"></span>S.W.R.D</p>
+    <p>All works © T.E. Greenway</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <button class="lightbox-close" id="lightbox-close">Close ✕</button>
+  <img id="lightbox-img" src="Ishtar_2026.jpg" alt="Ishtar, 2026">
+  <p class="lightbox-caption">Ishtar, 2026</p>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const trigger = document.getElementById('work-image');
+  const closeBtn = document.getElementById('lightbox-close');
+  let lastFocus = null;
+  function openLb() { lb.classList.add('active'); document.body.style.overflow = 'hidden'; lastFocus = document.activeElement; closeBtn.focus(); }
+  function closeLb() { lb.classList.remove('active'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+  trigger.addEventListener('click', openLb);
+  trigger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(); } });
+  closeBtn.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('active')) closeLb(); });
+</script>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dispatches — T.E. Greenway</title>
-<meta name="description" content="Dispatches from the studio of T.E. Greenway — exhibition news, new work and process notes.">
+<title>Dispatches · T.E. Greenway</title>
+<meta name="description" content="Dispatches from the studio of T.E. Greenway. Exhibition news, new work and process notes.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,10 @@
     <a href="index.html" class="logo"><span class="orb" aria-hidden="true"></span>T.E. Greenway</a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#work">Works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="works.html">Works</a></li>
         <li><a href="dispatches.html" aria-current="page">Dispatches</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="https://tegreenway.sumupstore.com" target="_blank" rel="noopener">Editions</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
   <div class="inner">
     <p class="section-label"><span class="orb" aria-hidden="true"></span>Dispatches</p>
     <h1 class="page-title">From the studio.</h1>
-    <p class="page-intro">Exhibition news, new work and process notes — written occasionally, sent directly. The latest dispatches are below; subscribe to receive them by email.</p>
+    <p class="page-intro">Exhibition news, new work and process notes, sent directly.</p>
     <p class="page-actions">
       <a href="https://tegreenway.substack.com/subscribe" class="btn gold" target="_blank" rel="noopener">Subscribe</a>
       <a href="https://tegreenway.substack.com" class="btn" target="_blank" rel="noopener">View on Substack</a>
@@ -55,9 +55,9 @@
 
 <footer>
   <div class="footer-inner">
-    <p>T.E. Greenway — 2026</p>
+    <p>T.E. Greenway 2026</p>
     <p class="footer-mark"><span class="orb" aria-hidden="true"></span>S.W.R.D</p>
-    <p>All works © T.E. Greenway. All rights reserved.</p>
+    <p>All works © T.E. Greenway</p>
   </div>
 </footer>
 
@@ -66,7 +66,7 @@
   // Pulls the latest posts from Substack's RSS feed.
   // To change the feed, edit SUBSTACK_URL below.
   // If the feed can't be reached, a link to Substack
-  // is shown instead — the page never breaks.
+  // is shown instead. The page never breaks.
   // =====================================================
   const SUBSTACK_URL = 'https://tegreenway.substack.com';
   const FEED_API = 'https://api.rss2json.com/v1/api.json?rss_url=' +
@@ -94,8 +94,8 @@
   }
 
   function showFallback() {
-    statusEl.innerHTML = 'Dispatches couldn\u2019t be loaded here just now — ' +
-      '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-deep)">read them directly on Substack</a>.';
+    statusEl.innerHTML = 'Dispatches couldn\u2019t be loaded here just now. ' +
+      '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-deep)">Read them directly on Substack</a>.';
   }
 
   fetch(FEED_API)
@@ -122,7 +122,7 @@
 
         const p = document.createElement('p');
         p.className = 'post-snippet';
-        p.textContent = snippet(stripHtml(item.description || item.content || ''), 220);
+        p.textContent = snippet(stripHtml(item.description || item.content || ''), 200);
 
         const read = document.createElement('a');
         read.className = 'post-read';
