@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#F7F4EC"/>
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia');
-    </style>
+    <radialGradient id="g" cx="0.34" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#E5C879"/>
+      <stop offset="0.55" stop-color="#C29B3B"/>
+      <stop offset="1" stop-color="#9A7526"/>
+    </radialGradient>
   </defs>
-  <rect width="32" height="32" rx="4" fill="#0a0a08"/>
-  <text x="16" y="25" 
-    font-family="UnifrakturMaguntia, serif" 
-    font-size="24" 
-    fill="#c8a96e" 
-    text-anchor="middle">G</text>
+  <circle cx="16" cy="16" r="10" fill="url(#g)"/>
 </svg>
