@@ -137,6 +137,14 @@ section { padding: 4.5rem 2rem; }
   color: var(--grey);
   font-size: clamp(1rem, 2vw, 1.2rem);
 }
+.hero-statement {
+  margin-top: 1.6rem;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.4;
+  max-width: 34ch;
+}
 .hero-meta {
   margin-top: 2rem;
   display: flex; gap: 2.2rem; flex-wrap: wrap;
@@ -174,6 +182,14 @@ section { padding: 4.5rem 2rem; }
   font-size: 0.7rem; letter-spacing: 0.18em;
   color: var(--gold-deep);
 }
+
+/* ---- Landing dispatches strip ---- */
+.landing-strip-wrap { border-top: 1px solid var(--line); padding: 2.4rem 2rem; }
+.landing-strip {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 2rem; flex-wrap: wrap;
+}
+.landing-strip p:first-child { color: var(--grey); max-width: 46ch; }
 
 /* ---- Single artwork page ---- */
 .work-page { padding: 4rem 2rem 5rem; }

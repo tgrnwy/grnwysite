@@ -64,13 +64,13 @@
 <script>
   // =====================================================
   // Pulls the latest posts from Substack's RSS feed.
+  // Tries two independent routes; if both fail, shows a
+  // direct Substack link. If the feed is simply empty,
+  // says so with a subscribe prompt. Never breaks.
   // To change the feed, edit SUBSTACK_URL below.
-  // If the feed can't be reached, a link to Substack
-  // is shown instead. The page never breaks.
   // =====================================================
   const SUBSTACK_URL = 'https://tegreenway.substack.com';
-  const FEED_API = 'https://api.rss2json.com/v1/api.json?rss_url=' +
-                   encodeURIComponent(SUBSTACK_URL + '/feed');
+  const FEED_URL = SUBSTACK_URL + '/feed';
   const MAX_POSTS = 8;
 
   const statusEl = document.getElementById('posts-status');
@@ -88,58 +88,90 @@
   }
 
   function formatDate(str) {
-    const d = new Date(str.replace(' ', 'T'));
+    const d = new Date(str);
     if (isNaN(d)) return '';
     return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
-  function showFallback() {
+  function showUnreachable() {
     statusEl.innerHTML = 'Dispatches couldn\u2019t be loaded here just now. ' +
       '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-deep)">Read them directly on Substack</a>.';
   }
 
-  fetch(FEED_API)
-    .then(r => { if (!r.ok) throw new Error('Feed unavailable'); return r.json(); })
-    .then(data => {
-      if (!data.items || !data.items.length) { showFallback(); return; }
-      statusEl.remove();
-      data.items.slice(0, MAX_POSTS).forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'post';
+  function showEmpty() {
+    statusEl.textContent = 'No dispatches yet. Subscribe above to receive the first one.';
+  }
 
-        const date = document.createElement('span');
-        date.className = 'post-date';
-        date.textContent = formatDate(item.pubDate || '');
+  function renderPosts(items) {
+    if (!items.length) { showEmpty(); return; }
+    statusEl.remove();
+    items.slice(0, MAX_POSTS).forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'post';
 
-        const body = document.createElement('div');
+      const date = document.createElement('span');
+      date.className = 'post-date';
+      date.textContent = formatDate(item.pubDate || '');
 
-        const titleLink = document.createElement('a');
-        titleLink.className = 'post-title-link';
-        titleLink.href = item.link;
-        titleLink.target = '_blank';
-        titleLink.rel = 'noopener';
-        titleLink.textContent = item.title;
+      const body = document.createElement('div');
 
-        const p = document.createElement('p');
-        p.className = 'post-snippet';
-        p.textContent = snippet(stripHtml(item.description || item.content || ''), 200);
+      const titleLink = document.createElement('a');
+      titleLink.className = 'post-title-link';
+      titleLink.href = item.link;
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener';
+      titleLink.textContent = item.title;
 
-        const read = document.createElement('a');
-        read.className = 'post-read';
-        read.href = item.link;
-        read.target = '_blank';
-        read.rel = 'noopener';
-        read.textContent = 'Read dispatch';
+      const p = document.createElement('p');
+      p.className = 'post-snippet';
+      p.textContent = snippet(stripHtml(item.description || ''), 200);
 
-        body.appendChild(titleLink);
-        body.appendChild(p);
-        body.appendChild(read);
-        li.appendChild(date);
-        li.appendChild(body);
-        listEl.appendChild(li);
+      const read = document.createElement('a');
+      read.className = 'post-read';
+      read.href = item.link;
+      read.target = '_blank';
+      read.rel = 'noopener';
+      read.textContent = 'Read dispatch';
+
+      body.appendChild(titleLink);
+      body.appendChild(p);
+      body.appendChild(read);
+      li.appendChild(date);
+      li.appendChild(body);
+      listEl.appendChild(li);
+    });
+  }
+
+  // Route 1: rss2json (returns parsed JSON)
+  function viaRss2json() {
+    return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL))
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(data => {
+        if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error();
+        return data.items.map(i => ({ title: i.title, link: i.link, pubDate: i.pubDate, description: i.description || i.content || '' }));
       });
-    })
-    .catch(showFallback);
+  }
+
+  // Route 2: allorigins proxy (returns raw XML, parsed here)
+  function viaAllOrigins() {
+    return fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(FEED_URL))
+      .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+      .then(xml => {
+        const doc = new DOMParser().parseFromString(xml, 'text/xml');
+        if (doc.querySelector('parsererror')) throw new Error();
+        return Array.from(doc.querySelectorAll('item')).map(item => ({
+          title: item.querySelector('title')?.textContent || 'Untitled',
+          link: item.querySelector('link')?.textContent || SUBSTACK_URL,
+          pubDate: item.querySelector('pubDate')?.textContent || '',
+          description: item.querySelector('description')?.textContent || ''
+        }));
+      });
+  }
+
+  viaRss2json()
+    .catch(viaAllOrigins)
+    .then(renderPosts)
+    .catch(showUnreachable);
 </script>
 
 </body>
